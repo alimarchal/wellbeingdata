@@ -14,12 +14,10 @@
                 All questions click to edit any
             </div>
             <ul class="list-group list-group-flush">
-                @foreach ($questionnaire->questions as $q)
 
-                    <li class="list-group-item">{{$loop->iteration}} -
-                        <a href="{{url('questionnaires/'.$questionnaire->id.'/questions/'.$q->id.'/edit')}}">{{$q->question_no}} {{$q->question}}</a>
+                    <li class="list-group-item">
+                        <a href="{{url('downloadSurveyFile')}}">Download Survey Excel File</a>
                     </li>
-                @endforeach
             </ul>
             <div class="card-footer text-muted">
                 Date: {{date('d-m-Y')}}

@@ -280,14 +280,15 @@ return [
         [
             'text' => 'Take Surveywe',
             'url'  => 'surveys/1-WellBeing',
-            'icon' => 'fas fa-fw fa fa-book',
+            'icon' => 'fas fa-fw fa fa-arrow-right',
+            'target' => '_blank',
         ],
-//        ['header' => 'Reporting'],
-//        [
-//            'text' => 'Survey',
-//            'url'  => 'questionnaires/1/questions/create',
-//            'icon' => 'fas fa-fw fa fa-question-circle',
-//        ],
+        ['header' => 'Reporting'],
+        [
+            'text' => 'Survey',
+            'url'  => 'surveys/download',
+            'icon' => 'fas fa-fw fa fa-download',
+        ],
 //        [
 //            'text' => 'Show Questions',
 //            'url'  => 'questionnaires/1',

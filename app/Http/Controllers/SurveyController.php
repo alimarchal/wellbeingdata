@@ -40,21 +40,21 @@ class SurveyController extends Controller
     public function store(Questionnaire $questionnaire, $slug, Request $request)
     {
         $data = $request->all();
-//        $request->validate([
-//            'survey.gender' => 'required',
-//            'survey.residential_area' => 'required',
-//            'survey.family_status' => 'required',
-//            'survey.household_size' => 'required',
-//            'survey.marital_status' => 'required',
-//            'survey.health' => 'required',
-//            'survey.age' => 'required',
-//            'survey.accepting_own_mistakes' => 'required',
-//            'survey.controlling_desire' => 'required',
-//            'survey.likening_same_for_other' => 'required',
-//            'survey.completing_task_work_wisely' => 'required',
-//            'survey.monthly_basic_income' => 'required',
-//            'survey.monthly_part_time_income' => 'required',
-//        ]);
+        $request->validate([
+            'survey.gender' => 'required',
+            'survey.residential_area' => 'required',
+            'survey.family_status' => 'required',
+            'survey.household_size' => 'required',
+            'survey.marital_status' => 'required',
+            'survey.health' => 'required',
+            'survey.age' => 'required',
+            'survey.accepting_own_mistakes' => 'required',
+            'survey.controlling_desire' => 'required',
+            'survey.likening_same_for_other' => 'required',
+            'survey.completing_task_work_wisely' => 'required',
+            'survey.monthly_basic_income' => 'required',
+            'survey.monthly_part_time_income' => 'required',
+        ]);
         $totalCount =  count($data['responses']) * 10;
         $obtainScore = 0;
         $answer = Answer::all();
@@ -126,5 +126,10 @@ class SurveyController extends Controller
     public function destroy(Survey $survey)
     {
         //
+    }
+
+    public function download()
+    {
+        return view('survey.download');
     }
 }

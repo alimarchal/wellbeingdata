@@ -68,7 +68,6 @@
                 <h2>I have calculated your wellbeing based on the data you have provided.</h2>
                 <h1>You percentage is {{ session('score') }}% </h1>
                 <h3>You have {{ session('status') }}</h3>
-                <h4>You can <a href="{{url('surveys/1-wellbeing-calculator')}}">recalculate</a> your wellbeing</h4>
                 </div>
             @endif
         </div>

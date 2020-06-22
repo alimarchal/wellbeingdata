@@ -1,6 +1,9 @@
 <?php
 
+use App\Exports\SurveyExport;
+use App\Exports\UsersExport;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +31,8 @@ Route::put('questionnaires/{questionnaire}/questions/{question}','QuestionContro
 Route::get('surveys/{questionnaire}-{slug}', 'SurveyController@show');
 Route::get('surveys', 'SurveyController@index');
 Route::post('surveys/{questionnaire}-{slug}', 'SurveyController@store');
+Route::get('surveys/download', 'SurveyController@download');
+
+Route::get('downloadSurveyFile', function () {
+    return Excel::download(new SurveyExport, 'survey.xlsx');
+});
