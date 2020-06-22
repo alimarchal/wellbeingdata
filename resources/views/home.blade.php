@@ -11,7 +11,35 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <p class="mb-0">You are logged in!ss</p>
+
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script type="text/javascript">
+                        google.charts.load('current', {'packages':['corechart']});
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+
+                            var data = google.visualization.arrayToDataTable([
+                                ['Task', 'Hours per Day'],
+                                @foreach($survey as $s)
+                                    ['{{$s->status}}', {{$s->total}}],
+                                @endforeach
+                            ]);
+
+                            var options = {
+                                title: 'WellBeing Database Status'
+                            };
+
+                            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                            chart.draw(data, options);
+                        }
+                    </script>
+
+                    <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+
+                    <p class="mb-0">You can use the left menu for detail information</p>
 
                 </div>
             </div>

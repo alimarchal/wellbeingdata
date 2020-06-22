@@ -18,7 +18,7 @@ use Maatwebsite\Excel\Facades\Excel;
 //['verify' => true, 'register' => false]
 Auth::routes();
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -32,7 +32,4 @@ Route::get('surveys/{questionnaire}-{slug}', 'SurveyController@show');
 Route::get('surveys', 'SurveyController@index');
 Route::post('surveys/{questionnaire}-{slug}', 'SurveyController@store');
 Route::get('surveys/download', 'SurveyController@download');
-
-Route::get('downloadSurveyFile', function () {
-    return Excel::download(new SurveyExport, 'survey.xlsx');
-});
+Route::get('downloadSurveyFile', 'SurveyController@downloadExcel');

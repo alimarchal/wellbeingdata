@@ -3,12 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Answer;
+use App\Exports\SurveyExport;
 use App\Questionnaire;
 use App\Survey;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SurveyController extends Controller
 {
+    /**
+     * SurveyController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['download','downloadExcel']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -131,5 +141,10 @@ class SurveyController extends Controller
     public function download()
     {
         return view('survey.download');
+    }
+
+    public function downloadExcel()
+    {
+        return Excel::download(new SurveyExport, 'survey.xlsx');
     }
 }
