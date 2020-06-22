@@ -22,6 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('questionnaires','QuestionnaireController');
 Route::get('questionnaires/{questionnaire}/questions/create','QuestionController@create');
 Route::post('questionnaires/{questionnaire}/questions','QuestionController@store');
+Route::get('questionnaires/{questionnaire}/questions/{question}/edit','QuestionController@edit');
+Route::put('questionnaires/{questionnaire}/questions/{question}','QuestionController@update');
 
 Route::get('surveys/{questionnaire}-{slug}', 'SurveyController@show');
 Route::get('surveys', 'SurveyController@index');

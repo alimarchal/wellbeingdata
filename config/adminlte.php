@@ -282,17 +282,17 @@ return [
             'url'  => 'surveys/1-WellBeing',
             'icon' => 'fas fa-fw fa fa-book',
         ],
-        ['header' => 'Reporting'],
-        [
-            'text' => 'Survey',
-            'url'  => 'questionnaires/1/questions/create',
-            'icon' => 'fas fa-fw fa fa-question-circle',
-        ],
-        [
-            'text' => 'Show Questions',
-            'url'  => 'questionnaires/1',
-            'icon' => 'fas fa-fw fa fa-book',
-        ],
+//        ['header' => 'Reporting'],
+//        [
+//            'text' => 'Survey',
+//            'url'  => 'questionnaires/1/questions/create',
+//            'icon' => 'fas fa-fw fa fa-question-circle',
+//        ],
+//        [
+//            'text' => 'Show Questions',
+//            'url'  => 'questionnaires/1',
+//            'icon' => 'fas fa-fw fa fa-book',
+//        ],
 //        [
 //            'text'    => 'multilevel',
 //            'icon'    => 'fas fa-fw fa-share',

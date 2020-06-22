@@ -70,12 +70,15 @@ class QuestionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * @param Questionnaire $questionnaire
      * @param \App\Question $question
      * @return \Illuminate\Http\Response
      */
-    public function edit(Question $question)
+    public function edit(Questionnaire $questionnaire, Question $question)
     {
-        //
+        $questionnaire->load('questions.answers');
+//        return  $question->id;
+        return view('question.edit',compact('question'));
     }
 
     /**
@@ -85,9 +88,11 @@ class QuestionController extends Controller
      * @param \App\Question $question
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Question $question)
+    public function update(Questionnaire $questionnaire, Question $question, Request $request)
     {
-        //
+
+        $questions = $question->update($request['question']);
+        return back()->with('status','Question has been updated');
     }
 
     /**

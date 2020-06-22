@@ -10,6 +10,9 @@
     <div class="row">
         @foreach ($questionnaire->questions as $q)
             <div class="col-12">
+
+
+
                 <div class="card-body">
                     <div class="card card-secondary">
                         <div class="card-header">
@@ -25,7 +28,10 @@
                                         </li>
                                     @endforeach
                                 </ul>
+
                             </ul>
+                            <br>
+                            <a href="{{url('questionnaires/'.$questionnaire->id.'/questions/'.$q->id.'/edit')}}" class="btn btn-danger">Edit</a>
                         </div>
                         <!-- /.card-body -->
                     </div>
