@@ -63,7 +63,7 @@ class SurveyController extends Controller
             'survey.likening_same_for_other' => 'required',
             'survey.completing_task_work_wisely' => 'required',
             'survey.monthly_basic_income' => 'required',
-            'survey.monthly_part_time_income' => 'required',
+//            'survey.monthly_part_time_income' => 'required',
         ]);
         $totalCount =  count($data['responses']) * 10;
         $obtainScore = 0;
